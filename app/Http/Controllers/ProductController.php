@@ -24,7 +24,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,6 +35,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        // return 'ok';
+        $result=Product::Create([
+            'name'=>$request->get('name'),
+            'price'=>$request->get('price'),
+              ]);
+        if ($result) {
+            return ['result'=>'Data is create'];
+        } else {
+            return ['result'=>'Data is not create'];
+        }
+        
     }
 
     /**
