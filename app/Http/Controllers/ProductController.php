@@ -103,6 +103,12 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $result=$product->delete();
+        if ($result) {
+            return ['result'=>'Data is delete'];
+        } else {
+            return ['result'=>'Data is not delete'];
+        }
+        
     }
 }
