@@ -14,8 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-       return Product::all();
-    }
+     return Product::all();
+ }
 
     /**
      * Show the form for creating a new resource.
@@ -39,7 +39,7 @@ class ProductController extends Controller
         $result=Product::Create([
             'name'=>$request->get('name'),
             'price'=>$request->get('price'),
-              ]);
+        ]);
         if ($result) {
             return ['result'=>'Data is create'];
         } else {
@@ -56,7 +56,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return $product;
     }
 
     /**
@@ -67,7 +67,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        
     }
 
     /**
@@ -79,7 +79,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        return $product;
     }
 
     /**
