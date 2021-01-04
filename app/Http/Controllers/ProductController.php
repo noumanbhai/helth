@@ -14,8 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-     return Product::all();
- }
+       return Product::all();
+   }
 
     /**
      * Show the form for creating a new resource.
@@ -67,7 +67,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        
+        return $product;
     }
 
     /**
@@ -79,8 +79,21 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        return $product;
-    }
+        // return $request;
+        // $result=$product->update($request->all());
+
+        $result=$product->update([
+         'id'=>$request->get('id'),
+         'name'=>$request->get('name'),
+         'price'=>$request->get('price'),
+         ]);
+        if ($result) {
+         return ['result'=>'Data is update'];
+     } else {
+         return ['result'=>'Data is not update'];
+     }
+
+ }
 
     /**
      * Remove the specified resource from storage.
