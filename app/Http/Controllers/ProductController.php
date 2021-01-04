@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return "ok";
+       return Product::all();
     }
 
     /**
@@ -35,7 +35,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
